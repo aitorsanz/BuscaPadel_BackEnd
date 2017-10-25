@@ -6,7 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var partidos = require('../../IdeaProjects/BuscaPadel_BackEnd/routes/partidos');
+var jugadores = require('../../IdeaProjects/BuscaPadel_BackEnd/routes/jugadores');
 
 var app = express();
 
@@ -23,7 +24,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/partidos', partidos);
+app.use('/jugadores', jugadores);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
